@@ -16,3 +16,24 @@ Rappel: BMI = poids / taille^2 = poids / (taille * taille). (poids en kg and tai
 
 BONNE CHANCE 😀
 */
+function creatPerson(fullName, mass, height){
+    return {
+        fullName: fullName,
+        mass: mass,
+        height: height,
+        bmi() {
+            return this.mass / (this.height * this.height);
+        }
+    }
+}
+const mark = creatPerson('Mark', 69,1.72);
+const john = creatPerson('John', 79,1.82);
+console.log(mark, john);
+
+if (mark.bmi() > john.bmi()) {
+    console.log(`la Bmi de ${mark.fullName}(${mark.bmi()}) est plus grande que la Bmi de ${john.fullName}(${john.bmi()})`)
+} else if (john.bmi() > mark.bmi()) {
+    console.log(`la Bmi de ${john.fullName}(${john.bmi()}) est plus grande que la Bmi de ${mark.fullName}(${mark.bmi()})`)
+} else {
+    console.log(`la Bmi de ${john.fullName}(${john.bmi()}) est égale à la Bmi de ${mark.fullName}(${mark.bmi()})`)
+}
